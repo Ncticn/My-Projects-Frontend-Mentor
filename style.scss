@@ -1,0 +1,210 @@
+// @import '../main.css';
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+    --cyan: hsl(179, 62%, 43%);
+    --bright-yellow: hsl(71, 73%, 54%);
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+    --white: #FFF;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Karla", sans-serif;
+    background-color: var(--light-gray);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.color-white {
+    color: var(--white);
+}
+
+.color-cyan {
+    color: var(--cyan);
+}
+
+.color-bright-yellow {
+    color: var(--bright-yellow);
+}
+
+.color-light-gray {
+    color: var(--light-gray);
+}
+
+.color-grayish-blue {
+    color: var(--grayish-blue);
+}
+
+.bg-color-cyan {
+    background-color: var(--cyan);
+}
+
+.bg-color-bright-yellow {
+    background-color: var(--bright-yellow);
+}
+
+.bg-color-light-gray {
+    background-color: var(--light-gray);
+}
+
+.bg-color-grayish-blue {
+    background-color: var(--grayish-blue);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.single-price-card {
+    border-radius: 8px;
+    background-color: #FFF;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    .single-price-card-container {
+        width: 100%;
+        max-width: 650px;
+
+        .single-price-card-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: .5fr 1fr;
+
+            .join-our-community-card-main {
+                grid-column: 1/3;
+
+                .join-our-community-title {
+                    margin-bottom: 10px;
+                }
+
+                .join-our-community-notification {
+                    font-weight: 700;
+                }
+
+                .join-our-community-description {
+                    line-height: 28px;
+                }
+            }
+
+            .subscription {
+                grid-column: 1/2;
+                background-color: #2BB3B1;
+                border-radius: 0 0 0 8px;
+
+                .subscription-pay-method {
+                    >* {
+                        display: inline-block;
+                    }
+
+                    .subscription-price {
+                        margin-right: 14px;
+                        color: #FFF;
+                        font-weight: 700;
+                        font-size: 2em;
+                    }
+
+                    .subscription-date {
+                        opacity: .5;
+                    }
+                }
+
+                .subscription-description {
+                    line-height: 28px;
+                    margin-bottom: 20px;
+                }
+
+                .btn-sign-up {
+                    display: block;
+                    width: 100%;
+                    padding: 16px;
+                    text-align: center;
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    font-weight: 600;
+                    border-radius: 4px;
+                }
+            }
+
+            .why-us {
+                grid-column: 2/3;
+                background-color: #4ABEBD;
+                border-radius: 0 0 8px 0;
+
+                .why-us-description {
+                    line-height: 28px;
+                    font-size: 1.05em;
+                }
+            }
+
+            .join-our-community-card-main,
+            .subscription,
+            .why-us {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: center;
+                gap: 16px;
+                padding: 40px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    body {
+        height: 100%;
+    }
+
+    .single-price-card {
+        .single-price-card-container {
+            .single-price-card-wrapper {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(3, 1fr);
+
+                .join-our-community-card-main {
+                    grid-row: 1/2;
+                    grid-column: 1/2;
+                }
+
+                .why-us {
+                    grid-row: 3/4;
+                    grid-column: 1/2;
+                    border-radius: 0 0 8px 8px;
+                }
+
+                .subscription {
+                    grid-row: 2/3;
+                    grid-column: 1/2;
+                    border-radius: 0;
+                }
+
+                .join-our-community-card-main,
+                .subscription,
+                .why-us {
+                    padding: 20px;
+                }
+            }
+        }
+    }
+}
